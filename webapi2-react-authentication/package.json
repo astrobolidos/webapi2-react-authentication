@@ -3,6 +3,14 @@
   "version": "0.0.1",
   "description": "webapi2 authentication test with react app",
   "main": "public/js/app.js",
+  "scripts": {
+    "start": "watchify -o public/js/bundle.js -v -d .",
+    "build": "browserify . | uglifyjs -cm > public/js/bundle.min.js"
+  },  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astrobolidos/webapi2-react-authentication.git"
+  },  
   "dependencies": {
     "react": "^0.12.2"
   },
@@ -14,10 +22,6 @@
     "reactify": "^1.0.0",
     "uglify": "^0.1.1",
     "watchify": "^2.4.0"
-  },
-  "scripts": {
-    "start": "watchify -o public/js/bundle.js -v -d . ",
-    "build": "browserify . | uglifyjs -cm > js/bundle.min.js"
   },
   "author": "Lisandro Pacheco",
   "license": "ISC",
