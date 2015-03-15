@@ -1,13 +1,11 @@
-window.React  = require('react/addons');
-var React     = require('react/addons');
+
+var React = require('react/addons');
 
 var MyApp = React.createClass({
     render: function() {
-        return (
-            <h1>Welcome!</h1>
-        )
+        return <h1>Ok</h1>;
     }
 }); 
 
 
-React.render(<MyApp />, document.body);
+React.render(<MyApp />, document.getElementById('example'));
