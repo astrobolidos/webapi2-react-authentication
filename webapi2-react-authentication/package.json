@@ -1,0 +1,29 @@
+﻿{
+  "name": "webapi2-react-authentication",
+  "version": "0.0.1",
+  "description": "webapi2 authentication test with react app",
+  "main": "public/js/app.js",
+  "dependencies": {
+    "react": "^0.12.2"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "jest-cli": "^0.4.0",
+    "react": "^0.12.2",
+    "react-tools": "^0.12.2",
+    "reactify": "^1.0.0",
+    "uglify": "^0.1.1",
+    "watchify": "^2.4.0"
+  },
+  "scripts": {
+    "start": "watchify -o public/js/bundle.js -v -d . ",
+    "build": "browserify . | uglifyjs -cm > js/bundle.min.js"
+  },
+  "author": "Lisandro Pacheco",
+  "license": "ISC",
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
