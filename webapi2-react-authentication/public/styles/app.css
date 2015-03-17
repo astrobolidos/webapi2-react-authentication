@@ -1,1 +1,13 @@
-.body { padding: 0px; }
+* {
+	box-sizing: border-box;
+	font-family: 'Arial'
+}
+
+body {
+	padding: 20px;
+}
+
+.panel-primary { 	
+	margin: auto;
+	width: 600px; 
+}
