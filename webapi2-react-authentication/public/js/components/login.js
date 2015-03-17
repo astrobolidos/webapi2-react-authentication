@@ -6,10 +6,10 @@ var Glyphicon = Bootstrap.Glyphicon;
 
 var Login = React.createClass({
 	getInitialState: function() {
-		return { message: '', isLoading: false, buttonText: 'Sign In', buttonStyle: 'default' }
+		return { message: '', isLoading: false, buttonText: ' Sign In', buttonStyle: 'default' }
 	},
 	handleClick: function(e) {
-		this.setState({isLoading: true, buttonText: 'Signing'});
+		this.setState({isLoading: true, buttonText: ' Signing'});
 
 		var info = "grant_type=password";
 		info += "&username=" + this.refs.username.getValue();
@@ -17,7 +17,7 @@ var Login = React.createClass({
 
 		var login = this;
 		$.post("Token", info, function(data) {
-			login.setState({isLoading: false, buttonText: 'Signed', buttonStyle: 'success'})
+			login.setState({isLoading: false, buttonText: ' Signed', buttonStyle: 'success'})
   		sessionStorage.token = data.access_token;
 		}).fail(function(err){ 
 			login.setState({message:err.responseText});

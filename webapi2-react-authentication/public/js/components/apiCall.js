@@ -11,13 +11,7 @@ var ApiCall = React.createClass({
 	},
 	handleClick: function() {
 		this.setState({message:"calling..." });
-
-		var apiCall = this;
-		$.get("api/values", function(data) {
-			apiCall.setState({message: data})
-		}).fail(function(err){ 
-			apiCall.setState({message:err.responseText});
-		});		
+		ajaxApiCall(this);
 	},
 	render: function() {
 		return (
@@ -35,5 +29,21 @@ var ApiCall = React.createClass({
 		)
 	}
 });
+
+var ajaxApiCall = function(component) {
+		$.ajax({
+			url: "api/values",
+			type: 'GET',
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader('Authorization', 'Bearer ' + sessionStorage.token);
+			},
+			success: function(data) {
+				component.setState({message: data});
+			},
+			error: function(err) {
+				component.setState({message:err.responseText});
+			}
+		});		
+}
 
 module.exports = ApiCall;
