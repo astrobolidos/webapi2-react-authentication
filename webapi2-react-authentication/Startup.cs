@@ -26,7 +26,7 @@ namespace webapi2_react_authentication
             // Make ./public the default root of the static files in our Web Application.
             app.UseFileServer(new FileServerOptions
             {
-                RequestPath = new PathString(string.Empty),
+                RequestPath = new PathString(),
                 FileSystem = new PhysicalFileSystem("./public"),
                 EnableDirectoryBrowsing = true,
             });
