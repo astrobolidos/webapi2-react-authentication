@@ -116,6 +116,9 @@
   <ItemGroup>
     <Content Include="public\index.html" />
     <Content Include="public\js\app.js" />
+    <Content Include="public\js\bundle.js" />
+    <Content Include="public\js\components\apiCall.js" />
+    <Content Include="public\js\components\login.js" />
     <Content Include="public\styles\app.css" />
     <Content Include="Web.config" />
   </ItemGroup>
